@@ -1,0 +1,13 @@
+{% extends 'workCK/base.html' %}
+
+{% block content %}
+    {% for work in work %}
+        <div class="workCk">
+            <div class="date">
+                <p>published: {{ work.published_date }}</p>
+            </div>
+            <h2><a href="{% url 'work_detail' pk=work.pk %}">{{ work.work_name }}</a></h2>
+            <p>{{ work.work_day }}</p>
+        </div>
+    {% endfor %} 
+{% endblock %}    
